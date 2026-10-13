@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up</title>
     <link rel="stylesheet" href="/stylesheets/registration/index.css" />
+    <link rel="stylesheet" href="/stylesheets/notification/index.css" />
   </head>
 
   <body>
+    <%- include('notification/notification.ejs') %>
     <main class="auth-page">
       <section class="auth-form-side">
         <div class="auth-form-wrap">
@@ -50,5 +52,6 @@
       </section>
     </main>
     <script src="/javascripts/auth/index.js"></script>
+    <script src="/javascripts/notification/index.js"></script>
   </body>
 </html>

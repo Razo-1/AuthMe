@@ -8,17 +8,22 @@ class AuthController {
     }
 
     async registerUser(req, res) {
+        try {
 
-        const token = await req.app.locals.services.auth.registerUser(req.body);
-
-        res.json(token);
+            const token = await req.app.locals.services.auth.registerUser(req.body);
+            res.json(token);
+        } catch (error) {
+            res.status(400).json({ message: error.message });
+        }
     }
 
     async loginUser(req, res) {
-
-        const token = await req.app.locals.services.auth.loginUser(req.body);
-
-        res.json(token);
+        try {
+            const token = await req.app.locals.services.auth.loginUser(req.body);
+            res.json(token);
+        } catch (error) {
+            res.status(401).json({ message: error.message });
+        }
     }
 
     async authMe(req, res) {

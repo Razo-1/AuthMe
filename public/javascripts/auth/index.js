@@ -25,5 +25,6 @@ form.addEventListener('submit', async (e) => {
         window.location.href = '/profile';
     } catch (error) {
         console.error(error);
+        showNotification(error.message, 'error');
     }
 });

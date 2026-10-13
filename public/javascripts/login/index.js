@@ -18,39 +18,14 @@ form.addEventListener('submit', (e) => {
         })))
         .then(({ ok, result }) => {
             if (!ok) {
-                throw new Error(result.message || 'Login failed');
+                throw new Error(result.error || 'Login failed');
             }
 
             localStorage.setItem('token', result.token);
             window.location.href = '/profile';
-
-            fetch('/profile', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${result.token}`
-                }
-            })
-                .then((fetchResponse) => fetchResponse.json()
-                .then((user) => ({
-                    ok: fetchResponse.ok,
-                    user
-                })))
-                .then(({ ok, user }) => {
-                    if (!ok) {
-                        throw new Error(user.message || 'Failed to fetch user information');
-                    }
-
-                    window.location.href = '/profile';
-                })
-                .catch((error) => {
-                    console.error(error);
-                    alert(error.message);
-                });
-
-            form.reset();
         })
         .catch((error) => {
             console.error(error);
-            alert(error.message);
+            showNotification('invalid email or password', 'error');
         });
 });

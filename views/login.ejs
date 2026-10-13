@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
     <link rel="stylesheet" href="/stylesheets/login/index.css">
+    <link rel="stylesheet" href="/stylesheets/notification/index.css">
 </head>
 
 <body>
+    <%- include('notification/notification.ejs') %>
+
     <main class="auth-page">
         <section class="auth-form-side">
             <div class="auth-form-wrap">
@@ -27,6 +30,7 @@
         <section class="auth-image-side"><img src="/images/plant.jpg" alt="Green tropical plant"></section>
     </main>
     <script src="/javascripts/login/index.js"></script>
+    <script src="/javascripts/notification/index.js"></script>
 </body>
 
 </html>
