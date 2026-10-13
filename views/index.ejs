@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="/stylesheets/registration/index.css" />
+  </head>
+
+  <body>
+    <main class="auth-page">
+      <section class="auth-form-side">
+        <div class="auth-form-wrap">
+          <h1>Get Started Now</h1>
+          <form>
+            <label for="name">Name</label
+            ><input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              required
+            /><label for="email">Email address</label
+            ><input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            /><label for="password">Password</label
+            ><input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            /><label class="check-row"
+              ><input type="checkbox" required /><span
+                >I agree to the <a href="#">terms &amp; policy</a></span
+              ></label
+            ><button class="primary-button" type="submit">Signup</button>
+          </form>
+          <p class="switch-text">
+            Have an account? <a href="/sign-in">Sign In</a>
+          </p>
+        </div>
+      </section>
+      <section class="auth-image-side">
+        <img src="/images/plant.jpg" alt="Green tropical plant" />
+      </section>
+    </main>
+    <script src="/javascripts/auth/index.js"></script>
+  </body>
+</html>
