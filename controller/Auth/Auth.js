@@ -1,3 +1,6 @@
+const registerSchema = require('../../schem/registerSchem');
+const loginSchema = require('../../schem/loginSchem');
+
 class AuthController {
     async renderRegister(req, res) {
         const path = req.app.locals.services.auth.createPath('index');
@@ -5,12 +8,14 @@ class AuthController {
     }
 
     async registerUser(req, res) {
+
         const token = await req.app.locals.services.auth.registerUser(req.body);
 
         res.json(token);
     }
 
     async loginUser(req, res) {
+
         const token = await req.app.locals.services.auth.loginUser(req.body);
 
         res.json(token);
